@@ -1,28 +1,44 @@
-# rails-depot
-Rails depot Scaffold
+# Rails depot Scaffold
 
-This document contain whatever steps are necessary to get the
-application up and running.
+This doc contain steps are necessary to get the
+app up and running.
 
-Things you may want to cover:
+## App
 
 * Ruby version
-
 * System dependencies
-
 * Configuration
-
 * Database creation
+* Database initialization
+* How to run the test suite
+* Services (job queues, cache servers, search engines, etc.)
+* Deployment instructions
+
+
+## How to run an app
+
+Below steps are necessary to get the app up and running locally:
+
+* install all dependencies
+* run in console rails s
+* open `http://localhost:3000/products`
+
+## Rails
 
 * Database initialization
 ```
- bin/rails db:seed
+bin/rails db:seed
 ```
 
-* How to run the test suite
+* This will put you directly into the SQLite database that the app uses
+```
+bin/rails dbconsole.
+``` 
 
-* Services (job queues, cache servers, search engines, etc.)
+* Rolling back the migration
+```
+bin/rails db:rollback
+bin/rails db:migrate
+```
 
-* Deployment instructions
 
-* ...
