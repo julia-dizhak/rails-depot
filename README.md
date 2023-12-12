@@ -11,6 +11,8 @@ app up and running.
 * Database creation
 * Database initialization
 * How to run the test suite
+* Unit testing of models
+* Test Fixtures: fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment instructions
 
@@ -42,9 +44,21 @@ bin/rails db:rollback
 bin/rails db:migrate
 ```
 
-* Run unit tests
+* Run unit tests of models
 ```
 bin/rails test:models
+```
+
+* Run unit tests 
+```
+bin/rails test
+# run one test case
+bin/rails test test/controllers/products_controller_test.rb:19
+```
+
+* Each test method gets a freshly initialized table in the test database, loaded from the fixtures we provide
+```
+bin/rails db:test:prepare
 ```
 
 ## During Building an App

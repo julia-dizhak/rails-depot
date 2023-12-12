@@ -1,6 +1,7 @@
 require "test_helper"
 
 class ProductTest < ActiveSupport::TestCase
+  fixtures :products
   # test "the truth" do
   #   assert true
   # end
@@ -20,8 +21,7 @@ class ProductTest < ActiveSupport::TestCase
                           image_url: "zzz.jpg")
     product.price = -1
     assert product.invalid?
-    assert_equal ["must be greater than or equal to 0.01"],
-    product.errors[:price]
+    assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
   end
 
   test "price for product must be greated than or equal to 0.01" do
@@ -30,8 +30,7 @@ class ProductTest < ActiveSupport::TestCase
                           image_url: "zzz.jpg")
     product.price = 0
     assert product.invalid?
-    assert_equal ["must be greater than or equal to 0.01"],
-    product.errors[:price]
+    assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
   end
 
   test "price for product must be positive" do
@@ -41,5 +40,23 @@ class ProductTest < ActiveSupport::TestCase
     product.price = 1
     assert product.valid?
   end
-  
+
+  test "product is not valid without a unique title" do 
+    product = Product.new(title: products(:ruby).title,
+                          description: "yyy", 
+                          price: 1, 
+                          image_url: "fred.gif")
+
+    assert product.invalid?
+    assert_equal ["has already been taken"], product.errors[:title] 
+  end
+
+  test "product is not valid without a unique title - i18n" do 
+    product = Product.new(title: products(:ruby).title,
+                          description: "yyy", 
+                          price: 1, 
+                          image_url: "fred.gif")
+    assert product.invalid?
+    assert_equal [I18n.translate('errors.messages.taken')], product.errors[:title]
+  end
 end
