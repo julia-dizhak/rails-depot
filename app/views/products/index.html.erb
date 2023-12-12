@@ -19,17 +19,18 @@
 
   <table id="products" class="mx-auto"> 
     <tbody>
-      <% @products.each do |product, index| %>
+      <% @products.each do |product| %>
         <tr class="<%= cycle('bg-green-50', 'bg-white') %>">
           <td class="px-2 py-3">
-            image_<%= index %>
+            image_<%= product.id %>
           </td>
           <td>
-            <h2 class="text-xl font-bold mb-3">
-              <%= product.title %></h2>
-              <p>
-                <%= truncate(strip_tags(product.description), length: 100) %>
-              </p>
+            <h2 class="text-xl font-bold mb-3 p-4">
+              <%= product.title %>
+            </h2>
+            <p>
+              <%= truncate(strip_tags(product.description), length: 100) %>
+            </p>
           </td>
           <td class="px-3"> 
             <ul>
@@ -56,13 +57,14 @@
     <tfoot>
       <tr>
         <td colspan="3">
-          <div class="mt-8">
-            <%= link_to "New product", 
-                        new_product_path, 
-                        class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium text-center" %>
-          </div> 
+          The best products
         </td>
       </tr>
     </tfoot>
 </table>
+<div class="mt-8 py-3 px-5 text-center ml-3 mr-3">
+  <%= link_to "New product",
+              new_product_path,
+              class: "rounded-lg py-3 px-5 bg-blue-600 text-white font-medium " %>
+  </div> 
 </div>
