@@ -9,10 +9,6 @@
     <h1 class="mx-auto font-bold text-4xl">Products</h1>
   </div>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Products</h1>
-  </div>
-
   <div id="products" class="min-w-full">
     <%= render @products %>
   </div>
@@ -62,9 +58,10 @@
       </tr>
     </tfoot>
 </table>
-<div class="mt-8 py-3 px-5 text-center ml-3 mr-3">
+
+<div class="mt-8 py-3 px-5 text-center mx-auto">
   <%= link_to "New product",
               new_product_path,
               class: "rounded-lg py-3 px-5 bg-blue-600 text-white font-medium " %>
-  </div> 
+</div> 
 </div>
