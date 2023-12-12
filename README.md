@@ -42,6 +42,11 @@ bin/rails db:rollback
 bin/rails db:migrate
 ```
 
+* Run unit tests
+```
+bin/rails test:models
+```
+
 ## During Building an App
 
 - We created a dev database.
