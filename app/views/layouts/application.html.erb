@@ -14,9 +14,25 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-slate-50">
-    <main class="container mx-auto mt-8 px-5 flex mb-4">
-      <%= yield %>
-    </main>
+  <body class="bg-slate-50 h-full">
+    <header class="bg-pink-400">
+      <h1 class="text-white text-2xl p-3 pb-6">The Pragmatic Bookshelf</h1>
+      <h1><%= @page_title %></h1> 
+    </header>
+    
+    <section class="flex h-full">
+      <nav class="bg-pink-400 p-6">
+        <ul class="text-white leading-8">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <!--<li><a href="/questions">Questions</a></li> <li><a href="/news">News</a></li>
+          <li><a href="/contact">Contact</a></li>-->
+        </ul> 
+      </nav>
+
+      <main class="container mx-auto mt-8 px-5 flex mb-4">
+        <%= yield %>
+      </main>
+    </section>
   </body>
 </html>
