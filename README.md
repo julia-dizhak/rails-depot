@@ -96,4 +96,4 @@ bin/rails db:test:prepare
 
 ## Todo
 
-* fix tailwind issues
+* configure suggested workflows for rails
