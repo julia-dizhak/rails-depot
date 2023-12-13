@@ -1,33 +1,31 @@
-# Rails depot Scaffold
+# Project: Rails depot Scaffold
 
-Web-based Depot App build using Rails from book
+I build web-based Depot (shop) Application  using Rails from book
 Agile Web Development with Rails 7 by Sam Ruby.
+I build it for learning purposes #ruby #rails #rails7 #samruby
 
-We’ll be developing this application incrementally.
 
+## What I learned
 
-## Technical Details
-
-* Ruby version
-* System dependencies
-* Configuration
-* Database creation
-* Database initialization
-* How to run the test suite
+* Ruby version problems
+* System dependencies and configuration
+* Database creation and initialization
+* How to run the test suite in rails
 * Unit testing of models
 * Test Fixtures: fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
 * Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
+* Deployment on Digital ocean 
 
 
 ## How to run an app
 
 Below steps are necessary to get the app up and running locally:
 
+* clone the repo
+* install all dependencies
 * install Rails 7.0.8 `rails new depot --css tailwind`
 * install ruby 3.1.2 `brew install ruby`
-*  A database SQLite 3
-* install all dependencies
+* install a database SQLite 3 
 * run in console rails s
 * open `http://localhost:3000/products`
 
@@ -79,14 +77,14 @@ bin/rails db:test:prepare
 ```
 
 
-## Build an App
+## Technical details for the App
 
-* We created a dev database.
-* We used a migration to create and modify the schema in our development database.
-* We created the products table and used the scaffold generator to write an application to maintain it.
-* We updated a controller-specific view to show a list of products.
+* I created a dev database.
+* I used a migration to create and modify the schema in our development database.
+* I created the products table and used the scaffold generator to write an application to maintain it.
+* I updated a controller-specific view to show a list of products.
 
 
 ## Todo
 
-* todo 1
+* fix tailwind issues
