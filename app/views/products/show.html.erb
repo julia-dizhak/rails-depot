@@ -7,11 +7,18 @@
     <%= render @product %>
 
     <div class="mt-2">
-      <%= link_to "Edit this product", edit_product_path(@product), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "Edit this product", 
+                  edit_product_path(@product), 
+                  class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block rounded-lg text-black font-medium shadow-sm outline outline-offset-2 outline-pink-500 border-solid border-2 border-grey-600" %>
       <div class="inline-block ml-2">
-        <%= button_to "Destroy this product", product_path(@product), method: :delete, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+        <%= button_to "Destroy this product", 
+                      product_path(@product), 
+                      method: :delete, 
+                      class: "ml-2 rounded-lg py-3 px-5 bg-gray-800 font-medium text-white" %>
       </div>
-      <%= link_to "Back to products", products_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "Back to products", 
+                  products_path, 
+                  class: "ml-2 rounded-lg py-3 px-5 bg-gray-500 text-white inline-block font-medium" %>
     </div>
   </div>
 </div>

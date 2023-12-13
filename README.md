@@ -14,6 +14,7 @@ App is available here [Depot App (deployment by Digital Ocean)](http://138.68.12
 * Database creation and initialization
 * How to run the test suite in rails
 * Unit testing of models
+* Unit testing
 * Test Fixtures: fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment on Digital ocean 
@@ -21,10 +22,14 @@ App is available here [Depot App (deployment by Digital Ocean)](http://138.68.12
 
 ## Technical details for the App
 
-* I created a dev database.
-* I used a migration to create and modify the schema in our development database.
-* I created the products table and used the scaffold generator to write an application to maintain it.
-* I updated a controller-specific view to show a list of products.
+* I created a dev db;
+* used a migration to create and modify the schema in dev db;
+* created the products table and used the scaffold generator to write an application to maintain it;
+* created a controller-specific view to show a list of products;
+* used a migration to create and modify the schema in db;
+* added unit tests of model to be ensured that required fields are present in the model;
+
+
 
 
 ## How to run an app
@@ -32,7 +37,7 @@ App is available here [Depot App (deployment by Digital Ocean)](http://138.68.12
 Below steps are necessary to get the app up and running locally:
 
 * clone the repo
-* install all dependencies
+* install all dependencies: tailwind, etc
 * install Rails 7.0.8 `rails new depot --css tailwind`
 * install ruby 3.1.2 `brew install ruby`
 * install a database SQLite 3 
