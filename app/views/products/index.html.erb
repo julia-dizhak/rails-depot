@@ -5,7 +5,7 @@
     </p>
   <% end %>
 
-  <div class="flex justify-between items-center pb-8">
+  <div class="flex justify-between items-center pb-8 mt-8">
     <h1 class="mx-auto font-bold text-4xl">Products</h1>
   </div>
 
@@ -17,30 +17,34 @@
   <table id="products" class="mx-auto"> 
     <tbody>
       <% @products.each do |product| %>
-        <tr class="<%= cycle('bg-green-50', 'bg-white') %>">
-          <td class="px-2 py-3">
-            image_<%= product.id %>
+        <tr class="<%= cycle('bg-pink-50', 'bg-white') %>">
+          <td >
+            <div class="px-2 py-2">
+              url_<%= product.id %>
+            </div>  
           </td>
           <td>
-            <h2 class="text-xl font-bold mb-3 p-4">
-              <%= product.title %>
-            </h2>
-            <p>
-              <%= truncate(strip_tags(product.description), length: 100) %>
-            </p>
+            <div class="px-2 py-2">
+              <h2 class="text-xl font-bold mb-1 pt-3 pb-1">
+                <%= product.title %>
+              </h2>
+              <p class="pt-1 pb-4 test-sm">
+                <%= truncate(strip_tags(product.description), length: 150) %>
+              </p>
+            </div>  
           </td>
           <td class="px-3"> 
-            <ul>
+            <ul class="px-2 py-2">
               <li>
-                <%= link_to 'Show', product, class: 'hover:underline' %>
+                <%= link_to 'Show', product, class: 'hover:underline text-pink-500' %>
               </li>
               <li>
-                <%= link_to 'Edit', edit_product_path(product), class: 'hover:underline' %>
+                <%= link_to 'Edit', edit_product_path(product), class: 'hover:underline text-pink-500' %>
               </li>
               <li>
                 <%= link_to 'Destroy', 
                             product, 
-                            class: 'hover:underline',
+                            class: 'hover:underline text-pink-500',
                             data: {turbo_method: :delete,
                                   turbo_confirm: "Are you sure?"}
                  %>
@@ -54,7 +58,7 @@
     <tfoot>
       <tr>
         <td colspan="3">
-          The best products
+          <p class="text-xs text-center pt-2">You can find these products in your local shops</p>
         </td>
       </tr>
     </tfoot>
@@ -63,6 +67,6 @@
 <div class="mt-8 py-3 px-5 text-center mx-auto">
   <%= link_to "New product",
               new_product_path,
-              class: "rounded-lg py-3 px-5 bg-blue-600 text-white font-medium " %>
+              class: "rounded-lg py-3 px-5 text-black font-medium shadow-sm outline outline-offset-2 outline-pink-500 border-solid border-2 border-grey-600" %>
 </div> 
 </div>

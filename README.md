@@ -1,8 +1,10 @@
 # Project: Rails depot Scaffold
 
-I build web-based Depot (shop) Application  using Rails from book
-Agile Web Development with Rails 7 by Sam Ruby.
+I build web-based Depot (shop) application using Rails from book
+`Agile Web Development with Rails 7 by Sam Ruby`.
 I build it for learning purposes #ruby #rails #rails7 #samruby
+
+App is available here [Depot App (deployment by Digital Ocean)](http://138.68.128.38/products)
 
 
 ## What I learned
@@ -15,6 +17,14 @@ I build it for learning purposes #ruby #rails #rails7 #samruby
 * Test Fixtures: fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment on Digital ocean 
+
+
+## Technical details for the App
+
+* I created a dev database.
+* I used a migration to create and modify the schema in our development database.
+* I created the products table and used the scaffold generator to write an application to maintain it.
+* I updated a controller-specific view to show a list of products.
 
 
 ## How to run an app
@@ -41,7 +51,7 @@ The web server container will be running a combination of nginx1 and Phusion Pas
 * Deploying the application
 
 
-## Ruby on Rails
+## Rails
 
 * Database initialization
 ```
@@ -77,12 +87,6 @@ bin/rails db:test:prepare
 ```
 
 
-## Technical details for the App
-
-* I created a dev database.
-* I used a migration to create and modify the schema in our development database.
-* I created the products table and used the scaffold generator to write an application to maintain it.
-* I updated a controller-specific view to show a list of products.
 
 
 ## Todo
