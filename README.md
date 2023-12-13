@@ -1,9 +1,12 @@
 # Rails depot Scaffold
 
-This doc contain steps are necessary to get the
-app up and running.
+Web-based Depot App build using Rails from book
+Agile Web Development with Rails 7 by Sam Ruby.
 
-## App
+We’ll be developing this application incrementally.
+
+
+## Technical Details
 
 * Ruby version
 * System dependencies
@@ -21,12 +24,26 @@ app up and running.
 
 Below steps are necessary to get the app up and running locally:
 
+* install Rails 7.0.8 `rails new depot --css tailwind`
+* install ruby 3.1.2 `brew install ruby`
+*  A database SQLite 3
 * install all dependencies
 * run in console rails s
 * open `http://localhost:3000/products`
 
 
-## Rails
+## Cloud deployment - Docker
+
+For deployment, we’re going to make use of two Docker containers.
+The web server container will be running a combination of nginx1 and Phusion Passenger.
+
+* Configuring the database 
+* Keeping secrets
+* Building a docker image 
+* Deploying the application
+
+
+## Ruby on Rails
 
 * Database initialization
 ```
@@ -61,10 +78,15 @@ bin/rails test test/controllers/products_controller_test.rb:19
 bin/rails db:test:prepare
 ```
 
-## During Building an App
 
-- We created a dev database.
-• We used a migration to create and modify the schema in our development database.
-• We created the products table and used the scaffold generator to write an application to maintain it.
-• We updated a controller-specific view to show a list of products.
+## Build an App
 
+* We created a dev database.
+* We used a migration to create and modify the schema in our development database.
+* We created the products table and used the scaffold generator to write an application to maintain it.
+* We updated a controller-specific view to show a list of products.
+
+
+## Todo
+
+* todo 1
