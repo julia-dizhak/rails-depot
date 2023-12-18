@@ -91,6 +91,13 @@ bin/rails test:controllers
 bin/rails db:test:prepare
 ```
 
+* Caching
+```
+# on/off caching of partial results
+bin/rails dev:cache 
+Development mode is no longer being cached.
+```
+
 
 ## Todo
 
