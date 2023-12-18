@@ -17,7 +17,7 @@ App is available here [Depot App (deployment by Digital Ocean)](http://138.68.12
 * Unit testing
 * Test Fixtures: fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
 * Services (job queues, cache servers, search engines, etc.)
-* Deployment on Digital ocean 
+* Deployment by Digital ocean 
 
 
 ## Technical details for the App
@@ -74,24 +74,22 @@ bin/rails db:rollback
 bin/rails db:migrate
 ```
 
-* Run unit tests of models
+* Testing
 ```
+# Run unit tests of models
 bin/rails test:models
-```
 
-* Run unit tests 
-```
+# Run unit tests
 bin/rails test
+
 # run one test case
 bin/rails test test/controllers/products_controller_test.rb:19
-```
 
-* Each test method gets a freshly initialized table in the test database, loaded from the fixtures we provide
-```
+bin/rails test:controllers
+
+# Each test method gets a freshly initialized table in the test database, loaded from the fixtures we provide
 bin/rails db:test:prepare
 ```
-
-
 
 
 ## Todo
