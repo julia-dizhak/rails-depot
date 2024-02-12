@@ -2,22 +2,22 @@
 
 I build web-based Depot (shop) application using Rails from book
 `Agile Web Development with Rails 7 by Sam Ruby`.
-I build it for learning purposes #ruby #rails #rails7 #samruby
+It is developed for learning purposes #ruby #rails #rails7 #samruby
 
 App is available here [Depot App (deployment by Digital Ocean)](http://138.68.128.38/products)
 
 
 ## What I learned
 
-* resolve a problem with Ruby version
-* System dependencies / configuration
-* Database creation / initialization
+* resolve a problem with the Ruby version
+* System dependencies/configuration
+* Database creation/initialization
 * How to run the test suite in rails
-* Unit testing Vs Unit testing of models
-* Write functional tests for controller
-* Test Fixtures: fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
+* Unit testing vs. unit testing of models
+* Write functional tests for the controller
+* Test Fixtures: A fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
 * Services (job queues, cache servers, search engines, etc.)
-* Deployment by Digital ocean 
+* Deployment by Digital Ocean 
 
 
 ## Technical details for the App:
