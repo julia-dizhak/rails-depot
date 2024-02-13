@@ -14,12 +14,16 @@ Depot’s use cases are simple:
 
 * We start by identifying two roles: the buyer and the seller.
 * The buyer uses Depot to browse the products we have to sell, select some to purchase, and supply the information needed to create an order.
+* The buyer sees a catalog page, from which he selects one product at a time. Each product selected gets added to the cart, and the cart is displayed after each selection. The buyer can continue shopping using the catalog pages or check out and buy the contents of the cart. During checkout, we capture contact and payment details and then display a receipt page.
 * The seller uses Depot to maintain a list of products to sell, to determine the orders awaiting shipment, and to mark orders as shipped.
 
-Page flow
+### Page flow
+
 <img width="662" alt="agile-web-development-with-rails-7_P1_0_pdf" src="https://github.com/julia-dizhak/rails-depot/assets/1140769/55b3ca99-3efb-4664-a1ca-bb00666a0c82">
 
+### The seller flow
 
+After logging in, the seller sees a menu letting her create or view a product or ship existing orders. When viewing a product, the seller can optionally edit the product information or delete the product entirely.
 
 ## What is included
 
