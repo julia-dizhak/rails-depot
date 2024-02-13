@@ -25,6 +25,10 @@ Depot’s use cases are simple:
 
 After logging in, the seller sees a menu letting her create or view a product or ship existing orders. When viewing a product, the seller can optionally edit the product information or delete the product entirely.
 
+<img width="662" alt="agile-web-development-with-rails-7_P1_0_pdf" src="https://github.com/julia-dizhak/rails-depot/assets/1140769/ae671541-916a-4e6d-baf9-a7c7d46e8070">
+
+
+
 ## What is included
 
 It turns out that a shopping cart will illustrate many of the features of Rails development. What is included: create maintenance pages, link database tables, handle sessions, create forms, system testing, security, and page layout.
