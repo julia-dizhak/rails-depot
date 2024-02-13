@@ -1,26 +1,45 @@
 # Project: Rails depot Scaffold
 
-I build web-based Depot (shop) application using Rails from book
+Let’s create a web-based shopping cart application called Depot.
+I build the app using book
 `Agile Web Development with Rails 7 by Sam Ruby`.
 It is developed for learning purposes #ruby #rails #rails7 #samruby
 
 App is available here [Depot App (deployment by Digital Ocean)](http://138.68.128.38/products)
 
+## Use Cases
 
-## What I learned
+A use case is simply a statement about how some entity uses a system.
+Depot’s use cases are simple:
 
-* resolve a problem with the Ruby version
+* We start off by identifying two different roles or actors: the buyer and the seller.
+* The buyer uses Depot to browse the products we have to sell, select some to purchase, and supply the information needed to create an order.
+* The seller uses Depot to maintain a list of products to sell, to determine the orders that are awaiting shipment, and to mark orders as shipped.
+
+## What is included
+
+It turns out that shopping cart will illustrate many of the features of Rails development. What is included: create maintenance pages, link database tables, handle sessions, create forms, system testing, security, and page layout.
+
 * System dependencies/configuration
 * Database creation/initialization
-* How to run the test suite in rails
-* Unit testing vs. unit testing of models
+* Running the test suite in rails: Unit testing vs. unit testing of models
 * Write functional tests for the controller
-* Test Fixtures: A fixture is an environment in which you can run a test. A test fixture is a specification of the initial contents of a model (or models) under test.
+* Test Fixtures
 * Services (job queues, cache servers, search engines, etc.)
-* Deployment by Digital Ocean 
+* Deployment by Digital Ocean
+  
+## How to run an app
 
+Below steps are necessary to get the app up and running locally:
 
-## Technical details for the App:
+* clone the repo
+* install all dependencies: tailwind, etc
+* install Rails 7.0.8 `rails new depot --css tailwind`
+* install ruby 3.1.2 `brew install ruby`
+* install a database SQLite 3
+* run in console `rails s` and open `http://localhost:3000/products`
+
+## Technical details for the App
 
 * The app runs with a dev db;
 * created the products table and used the scaffold generator to write an app to maintain it;
@@ -38,19 +57,6 @@ App is available here [Depot App (deployment by Digital Ocean)](http://138.68.12
 
 
 
-## How to run an app
-
-Below steps are necessary to get the app up and running locally:
-
-* clone the repo
-* install all dependencies: tailwind, etc
-* install Rails 7.0.8 `rails new depot --css tailwind`
-* install ruby 3.1.2 `brew install ruby`
-* install a database SQLite 3 
-* run in console rails s
-* open `http://localhost:3000/products`
-
-
 ## Cloud deployment - Docker
 
 For deployment, we’re going to make use of two Docker containers.
@@ -61,20 +67,26 @@ The web server container will be running a combination of nginx1 and Phusion Pas
 * Building a docker image 
 * Deploying the application
 
+## Rails commands
 
-## Rails
+* Examine your installation
+
+```
+bin/rails about 
+
+bundle exec rails about
+```
 
 * Database initialization
-```
-bin/rails db:seed
-```
+
+```bin/rails db:seed```
 
 * This will put you directly into the SQLite database that the app uses
-```
-bin/rails dbconsole
-``` 
+
+```bin/rails dbconsole```
 
 * Rolling back the migration
+
 ```
 bin/rails db:rollback
 bin/rails db:migrate
@@ -107,12 +119,12 @@ bin/rails db:test:prepare
 ```
 
 * Caching
+  
 ```
 # on/off caching of partial results
 bin/rails dev:cache 
 Development mode is no longer being cached.
 ```
-
 
 ## Todo
 
@@ -120,3 +132,4 @@ Development mode is no longer being cached.
 * fix a height 100% for store
 * Shopping Basket to fix layout with buttons
 * Shopping basket: fix ability to add duplicates
+* Remove urls in products table
