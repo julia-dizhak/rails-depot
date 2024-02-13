@@ -27,6 +27,9 @@ After logging in, the seller sees a menu letting her create or view a product or
 
 <img width="662" alt="agile-web-development-with-rails-7_P1_0_pdf" src="https://github.com/julia-dizhak/rails-depot/assets/1140769/ae671541-916a-4e6d-baf9-a7c7d46e8070">
 
+## Data
+
+<img width="701" alt="agile-web-development-with-rails-7_P1_0_pdf" src="https://github.com/julia-dizhak/rails-depot/assets/1140769/720c6c95-686e-45d8-b263-f3ea1d57347c">
 
 
 ## What is included
