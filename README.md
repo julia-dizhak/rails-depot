@@ -12,17 +12,22 @@ App is available here [Depot App (deployment by Digital Ocean)](http://138.68.12
 A use case is simply a statement about how some entity uses a system.
 Depot’s use cases are simple:
 
-* We start off by identifying two different roles or actors: the buyer and the seller.
+* We start by identifying two roles: the buyer and the seller.
 * The buyer uses Depot to browse the products we have to sell, select some to purchase, and supply the information needed to create an order.
-* The seller uses Depot to maintain a list of products to sell, to determine the orders that are awaiting shipment, and to mark orders as shipped.
+* The seller uses Depot to maintain a list of products to sell, to determine the orders awaiting shipment, and to mark orders as shipped.
+
+Page flow
+<img width="662" alt="agile-web-development-with-rails-7_P1_0_pdf" src="https://github.com/julia-dizhak/rails-depot/assets/1140769/55b3ca99-3efb-4664-a1ca-bb00666a0c82">
+
+
 
 ## What is included
 
-It turns out that shopping cart will illustrate many of the features of Rails development. What is included: create maintenance pages, link database tables, handle sessions, create forms, system testing, security, and page layout.
+It turns out that a shopping cart will illustrate many of the features of Rails development. What is included: create maintenance pages, link database tables, handle sessions, create forms, system testing, security, and page layout.
 
 * System dependencies/configuration
 * Database creation/initialization
-* Running the test suite in rails: Unit testing vs. unit testing of models
+* Running the test suite in Rails: Unit testing vs. unit testing of models
 * Write functional tests for the controller
 * Test Fixtures
 * Services (job queues, cache servers, search engines, etc.)
