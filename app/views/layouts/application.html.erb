@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
+    <%= stylesheet_link_tag "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
@@ -15,6 +16,7 @@
   </head>
 
   <body class="bg-slate-50 h-full">
+
     <header class="bg-pink-400">
       <h1 class="text-white text-2xl p-3 pb-6">The Pragmatic Bookshelf</h1>
       <h1><%= @page_title %></h1> 

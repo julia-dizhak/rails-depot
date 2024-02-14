@@ -55,7 +55,7 @@ Below steps are necessary to get the app up and running locally:
 * SQLite 3 db is is the default database for Rails and was installed along with Rails
 * run in console `rails s` and open `http://localhost:3000/products`
 
-## Technical details for the App
+## Technical details
 
 * The app runs with a dev db;
 * created the products table and used the scaffold generator to write an app to maintain it;
@@ -83,7 +83,7 @@ The web server container will be running a combination of nginx1 and Phusion Pas
 
 ## Rails commands
 
-* Examine your installation
+**Examine your installation
 
 ```
 bin/dev
@@ -91,28 +91,28 @@ bin/rails about
 bundle exec rails about
 ```
 
-* Database
+**Database
 
 ```
 bin/rails db:seed
 bin/rails dbconsole
 ```
 
-* Migrations
+**Migrations
 
 ```
 bin/rails db:rollback
 bin/rails db:migrate
 ```
 
-* Scaffold generators
+**Scaffold generators
   
 ```
 bin/rails generate scaffold Cart
 bin/rails generate scaffold LineItem product:references cart:belongs_to
 ```
 
-* Tests
+**Tests
   
 ```
 bin/rails tests
@@ -125,7 +125,7 @@ bin/rails test test/controllers/line_items_controller_test.rb
 
 ```
 
-* Caching
+**Caching
   
 ```
 # on/off caching of partial results
