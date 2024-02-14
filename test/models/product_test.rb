@@ -1,10 +1,15 @@
 require "test_helper"
 
+=begin
+- We ensured that required fields are present.
+• We ensured that price fields are numeric and at least one cent.
+• We ensured that titles are unique.
+• We ensured that images match a given format.
+=end
+
+
 class ProductTest < ActiveSupport::TestCase
   fixtures :products
-  # test "the truth" do
-  #   assert true
-  # end
 
   test "product attributes must not be empty" do
     product = Product.new
@@ -43,9 +48,9 @@ class ProductTest < ActiveSupport::TestCase
 
   test "product is not valid without a unique title" do 
     product = Product.new(title: products(:ruby).title,
-                          description: "yyy", 
+                          description: "test description",
                           price: 1, 
-                          image_url: "fred.gif")
+                          image_url: "ruby.jpg")
 
     assert product.invalid?
     assert_equal ["has already been taken"], product.errors[:title] 
@@ -58,5 +63,25 @@ class ProductTest < ActiveSupport::TestCase
                           image_url: "fred.gif")
     assert product.invalid?
     assert_equal [I18n.translate('errors.messages.taken')], product.errors[:title]
+  end
+
+  def new_product(image_url) 
+    Product.new(title: "My Book Title",
+                description: "yyy",
+                price: 1,
+                image_url: image_url)
+  end
+
+  test "image url" do
+    ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg http://a.b.c/x/y/z/fred.gif }
+    bad = %w{ fred.doc fred.gif/more fred.gif.more }
+
+    ok.each do |image_url|
+      assert new_product(image_url).valid?, "#{image_url} must be valid"
+    end
+
+    bad.each do |image_url|
+      assert new_product(image_url).invalid?, "#{image_url} must be inalid"
+    end
   end
 end

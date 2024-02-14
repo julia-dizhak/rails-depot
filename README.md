@@ -31,16 +31,16 @@ After logging in, the seller sees a menu letting her create or view a product or
 
 <img width="701" alt="agile-web-development-with-rails-7_P1_0_pdf" src="https://github.com/julia-dizhak/rails-depot/assets/1140769/720c6c95-686e-45d8-b263-f3ea1d57347c">
 
-
 ## What is included
 
-It turns out that a shopping cart will illustrate many of the features of Rails development. What is included: create maintenance pages, link database tables, handle sessions, create forms, system testing, security, and page layout.
+It turns out that a shopping cart will illustrate many of the features of Rails dev.
 
-* System dependencies/configuration
-* Database creation/initialization
-* Running the test suite in Rails: Unit testing vs. unit testing of models
-* Write functional tests for the controller
-* Test Fixtures
+What is included: create new products, edit existing products, delete unwanted ones, create maintenance pages, link database tables, handle sessions, create forms, system testing, security, and page layout.
+
+* System dependencies configuration
+* Database initialization, db/test.sqlite3, db/production.sqlite3
+* Functional tests: unit testing of models, controllers
+* Rails Fixtures
 * Services (job queues, cache servers, search engines, etc.)
 * Deployment by Digital Ocean
   
@@ -52,7 +52,7 @@ Below steps are necessary to get the app up and running locally:
 * install all dependencies: tailwind, etc
 * install Rails 7.0.8 `rails new depot --css tailwind`
 * install ruby 3.1.2 `brew install ruby`
-* install a database SQLite 3
+* SQLite 3 db is is the default database for Rails and was installed along with Rails
 * run in console `rails s` and open `http://localhost:3000/products`
 
 ## Technical details for the App
@@ -71,16 +71,14 @@ Below steps are necessary to get the app up and running locally:
 * I added a private method and placed it in a concern, making it accessible to all of our controllers.
 * created relationships between carts and line items, and relationships between line items and products, and we were able to navigate using these relationships.
 
-
-
 ## Cloud deployment - Docker
 
 For deployment, we’re going to make use of two Docker containers.
 The web server container will be running a combination of nginx1 and Phusion Passenger.
 
-* Configuring the database 
+* Configuring the db
 * Keeping secrets
-* Building a docker image 
+* Building a docker image
 * Deploying the application
 
 ## Rails commands
@@ -88,20 +86,19 @@ The web server container will be running a combination of nginx1 and Phusion Pas
 * Examine your installation
 
 ```
+bin/dev
 bin/rails about 
-
 bundle exec rails about
 ```
 
-* Database initialization
+* Database
 
-```bin/rails db:seed```
+```
+bin/rails db:seed
+bin/rails dbconsole
+```
 
-* This will put you directly into the SQLite database that the app uses
-
-```bin/rails dbconsole```
-
-* Rolling back the migration
+* Migrations
 
 ```
 bin/rails db:rollback
@@ -109,29 +106,23 @@ bin/rails db:migrate
 ```
 
 * Scaffold generators
+  
 ```
 bin/rails generate scaffold Cart
 bin/rails generate scaffold LineItem product:references cart:belongs_to
 ```
 
-
-* Testing
+* Tests
+  
 ```
-# Run unit tests of models
+bin/rails tests
+bin/rails db:test:prepare.
 bin/rails test:models
 
-# Run unit tests
-bin/rails test
-
-# run one test case
+bin/rails test:controllers
 bin/rails test test/controllers/products_controller_test.rb:19
 bin/rails test test/controllers/line_items_controller_test.rb
 
-# test controllers
-bin/rails test:controllers
-
-# Each test method gets a freshly initialized table in the test database, loaded from the fixtures we provide
-bin/rails db:test:prepare
 ```
 
 * Caching
