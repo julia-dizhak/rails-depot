@@ -123,6 +123,7 @@ bin/rails test:models
 bin/rails test:controllers
 bin/rails test test/controllers/products_controller_test.rb:19
 bin/rails test test/controllers/line_items_controller_test.rb
+bin/rails log:clear LOGS=test
 
 ```
 

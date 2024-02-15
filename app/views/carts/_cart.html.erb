@@ -1,11 +1,10 @@
 <div id="<%= dom_id cart %>">
   <h2 class="font-bold text-2xl mb-4 pb-2">Your Shopping Basket</h2>
   
-  <ul class="list-none list-inside m-0 p-0 mb-2">
+  <ul class="cart-list list-none list-inside m-0 p-0 mb-2">
     <% cart.line_items.each do |item| %> 
       <li class="p-2">
-        <%= item.quantity %> &times;
-        <%= item.product.title %>
+        <%= item.quantity %> &times; <%= item.product.title %>
       </li>
     <% end %> 
   </ul>
