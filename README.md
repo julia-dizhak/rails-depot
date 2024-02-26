@@ -84,8 +84,7 @@ Below steps are necessary to get the app up and running locally:
 * Use a helper to format prices the way we want.
 * Implement fragment caching for portions of the page
 * Created a Cart object in one request and successfully located the same cart in subsequent requests by using a session object.
-* I added a private method and placed it in a concern, making it accessible to all of our controllers.
-* created relationships between carts and line items, and relationships between line items and products, and we were able to navigate using these relationships.
+* Providing a flash notice of an error that was detected
 
 ## Cloud deployment - Docker
 
