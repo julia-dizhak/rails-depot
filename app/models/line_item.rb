@@ -1,4 +1,5 @@
 =begin
+This table represents line items in a shopping cart. 
 connection products to carts
 
 we’ve duplicated the product’s price in the line item data.

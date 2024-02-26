@@ -31,6 +31,22 @@ After logging in, the seller sees a menu letting her create or view a product or
 
 <img width="701" alt="agile-web-development-with-rails-7_P1_0_pdf" src="https://github.com/julia-dizhak/rails-depot/assets/1140769/720c6c95-686e-45d8-b263-f3ea1d57347c">
 
+## The database schema
+
+The schema is designed to support a simple e-commerce system where users can add products to their shopping carts, and each product can have multiple line items associated with it, indicating the quantity of the product in each cart.
+
+The db schema consists of three tables: `carts, line_items, and products`.
+
+Table `cart` represents shopping carts.
+
+`line_items` - this table represents line items in a shopping cart. It has the following columns:
+
+* `product_id`: A foreign key referencing the id column of the products table. Indicates the product associated with the line item.
+* `cart_id`: A foreign key referencing the id column of the carts table. Indicates the cart to which the line item belongs.
+* `quantity`: Indicates the quantity of the product in the line item. Defaults to 1.
+
+Table `products` represents products available for purchase.
+
 ## What is included
 
 It turns out that a shopping cart will illustrate many of the features of Rails dev.
