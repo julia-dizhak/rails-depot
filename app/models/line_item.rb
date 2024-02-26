@@ -11,4 +11,8 @@ so each line item needs to reflect the price of the product at the time the orde
 class LineItem < ApplicationRecord
   belongs_to :product
   belongs_to :cart
+
+  def total_price
+    product.price * quantity
+  end
 end

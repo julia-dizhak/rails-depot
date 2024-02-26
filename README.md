@@ -39,13 +39,13 @@ The db schema consists of three tables: `carts, line_items, and products`.
 
 Table `cart` represents shopping carts.
 
+Table `products` represents products available for purchase.
+
 `line_items` - this table represents line items in a shopping cart. It has the following columns:
 
 * `product_id`: A foreign key referencing the id column of the products table. Indicates the product associated with the line item.
 * `cart_id`: A foreign key referencing the id column of the carts table. Indicates the cart to which the line item belongs.
 * `quantity`: Indicates the quantity of the product in the line item. Defaults to 1.
-
-Table `products` represents products available for purchase.
 
 ## What is included
 

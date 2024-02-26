@@ -24,7 +24,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_select 'nav a', minimum: 4
-    assert_select 'h2', 'Your Shopping Basket'
+    assert_select 'h2', 'Your Shopping Cart'
     assert_select 'ul.cart-list li', "1 \u00D7 Programming Ruby 1.9"
 
     # assert_redirected_to line_item_url(LineItem.last)
