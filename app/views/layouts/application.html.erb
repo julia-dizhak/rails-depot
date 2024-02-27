@@ -23,15 +23,19 @@
     </header>
     
     <section class="flex h-full">
-      <nav class="bg-pink-400 p-6">
-        <ul class="text-white leading-8">
-          <li><a href="/">Home</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/">Questions</a></li> 
-          <li><a href="/">Contact</a></li>
-        </ul> 
-      </nav>
+      <aside class="w-[300px]">
+        <nav class="bg-pink-400 p-6">
+          <ul class="text-white leading-8">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/">Questions</a></li>
+            <li><a href="/">Contact</a></li>
+          </ul>
+        </nav>
 
+        <%= render partial: 'layouts/cart', locals: { cart: @cart } %>
+      </aside>
+    
       <main class="container mx-auto mt-8 px-5 flex mb-4">
         <%= yield %>
       </main>
