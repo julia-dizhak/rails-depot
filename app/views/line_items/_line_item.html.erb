@@ -1,16 +1,14 @@
 <tr>
-  <td>
-    <%= button_to 'remove',
-      line_item,
-      method: :delete,
-      class:'rounded-lg py-2 px-2 mr-2 text-white bg-red-500' %>
-  </td>
   <td class="text-right">
     <span class="font-bold"><%= line_item.quantity %></span>
   </td>
   <td>&times;</td>
   <td class="pr-2 product-title">
-    <div class="py-4"><%= line_item.product.title %></div>
+    <div class="pt-4 pb-1 text-sm"><%= line_item.product.title %></div>
+    <%= button_to 'remove',
+      line_item,
+      method: :delete,
+      class:'rounded-lg py-1 px-1 text-white bg-red-500 text-xs' %>
   </td>
   <td class="text-right font-bold">
     = <%= number_to_currency(line_item.total_price) %>
