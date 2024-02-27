@@ -1,16 +1,22 @@
-<tr>
-  <td class="text-right">
-    <span class="font-bold"><%= line_item.quantity %></span>
-  </td>
-  <td>&times;</td>
-  <td class="pr-2 product-title">
-    <div class="pt-4 pb-1 text-sm"><%= line_item.product.title %></div>
-    <%= button_to 'remove',
-      line_item,
-      method: :delete,
-      class:'rounded-lg py-1 px-1 text-white bg-red-500 text-xs' %>
-  </td>
-  <td class="text-right font-bold">
-    = <%= number_to_currency(line_item.total_price) %>
-  </td>
+<% if line_item == @current_item %>
+  <tr class="line-item-highlight">
+<% else %>
+  <tr>
+<% end %>
+    <td class="text-right">
+      <span class="font-bold"><%= line_item.quantity %></span>
+    </td>
+    <td>&times;</td>
+    <td class="pr-2 product-title">
+      <div class="pt-4 pb-1 text-sm"><%= line_item.product.title %></div>
+      <%= button_to 'remove',
+        line_item,
+        method: :delete,
+        class:'rounded-lg py-1 px-1 text-white bg-red-500 text-xs' %>
+    </td>
+    <td class="text-right font-bold">
+      <div>
+        = <%= number_to_currency(line_item.total_price) %>
+      </div>
+    </td>
 </tr>
