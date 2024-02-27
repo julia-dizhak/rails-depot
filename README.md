@@ -41,6 +41,8 @@ Table `cart` represents shopping carts.
 
 Table `products` represents products available for purchase.
 
+Table `orders` consist of customer’s contact information and payment details
+
 `line_items` - this table represents line items in a shopping cart. It has the following columns:
 
 * `product_id`: A foreign key referencing the id column of the products table. Indicates the product associated with the line item.
@@ -85,6 +87,8 @@ Below steps are necessary to get the app up and running locally:
 * Implement fragment caching for portions of the page
 * Created a Cart object in one request and successfully located the same cart in subsequent requests by using a session object.
 * Providing a flash notice of an error that was detected
+* Creating Hotwired Cart
+* Broadcasting updates with Action Cable for products
 
 ## Cloud deployment - Docker
 

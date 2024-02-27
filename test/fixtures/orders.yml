@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Julia Di
+  address: Ingenting gatan
+  email: test@example.com
+  pay_type: Check
+
+two:
+  name: Test
+  address: No street
+  email: test2@example.com
+  pay_type: 1
