@@ -7,8 +7,8 @@
       <span class="font-bold"><%= line_item.quantity %></span>
     </td>
     <td>&times;</td>
-    <td class="pr-2 product-title">
-      <div class="pt-4 pb-1 text-sm"><%= line_item.product.title %></div>
+    <td class="pr-2">
+      <p class="pt-4 pb-1 text-sm product-title"><%= line_item.product.title %></p>
       <%= button_to 'remove',
         line_item,
         method: :delete,

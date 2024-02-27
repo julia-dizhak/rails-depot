@@ -126,6 +126,8 @@ bin/rails db:rollback
 ```
 bin/rails generate scaffold Cart
 bin/rails generate scaffold LineItem product:references cart:belongs_to
+
+bin/rails generate channel products
 ```
 
 **Tests
@@ -143,11 +145,12 @@ bin/rails log:clear LOGS=test
 ```
 
 **Caching
-  
+
+On/off caching of partial results
 ```
-# on/off caching of partial results
-bin/rails dev:cache 
-Development mode is no longer being cached.
+
+bin/rails dev:cache - Development mode is no longer being cached.
+Rails.cache.clear
 ```
 
 ## Todo

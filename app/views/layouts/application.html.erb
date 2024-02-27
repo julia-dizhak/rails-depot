@@ -24,6 +24,8 @@
     
     <section class="flex h-full">
       <aside class="w-[500px]">
+        <%= render partial: 'layouts/cart', locals: { cart: @cart } %>
+
         <nav class="bg-pink-400 p-6">
           <ul class="text-white leading-8">
             <li><a href="/">Home</a></li>
@@ -32,8 +34,6 @@
             <li><a href="/">Contact</a></li>
           </ul>
         </nav>
-
-        <%= render partial: 'layouts/cart', locals: { cart: @cart } %>
       </aside>
     
       <main class="container mx-auto mt-8 px-5 flex mb-4">
