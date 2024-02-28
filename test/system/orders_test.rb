@@ -1,6 +1,8 @@
 require "application_system_test_case"
 
 class OrdersTest < ApplicationSystemTestCase
+  include ActiveJob::TestHelper
+
   setup do
     @order = orders(:one)
   end
@@ -42,6 +44,47 @@ class OrdersTest < ApplicationSystemTestCase
     assert has_no_field? 'Expiration date'
     assert has_field? 'Po number'
   end  
+
+  test "check order and delivery" do
+    LineItem.delete_all
+    Order.delete_all
+
+    visit store_index_url
+    
+    click_on 'Add to Cart', match: :first
+    click_on 'Checkout'
+  
+    fill_in 'Name', with: 'Julia Di'
+    fill_in 'Address', with: 'Test Street'
+    fill_in 'Email', with: 'test@example.com'
+    
+    select 'Check', from: 'Pay type'
+    fill_in "Routing number", with: "123456"
+    fill_in "Account number", with: "987654"
+    
+    click_button "Place Order"
+    assert_text 'Thank you for your order'
+    
+    perform_enqueued_jobs
+    perform_enqueued_jobs
+    assert_performed_jobs 2
+    
+    orders = Order.all
+    assert_equal 1, orders.size
+    
+    order = orders.first
+    assert_equal "Julia Di", order.name
+    assert_equal "Test Street", order.address
+    assert_equal "test@example.com", order.email
+    assert_equal "Check", order.pay_type
+    assert_equal 1, order.line_items.size
+
+    mail = ActionMailer::Base.deliveries.last
+    assert_equal ["test@example.com"], mail.to
+    assert_equal 'Julia Di <test@example.com>', mail[:from].value
+    assert_equal "Pragmatic Store Order Confirmation", mail.subject
+end
+
   # test "should create order" do
   #   visit orders_url
   #   click_on "New order"
