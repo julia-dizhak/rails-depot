@@ -146,6 +146,8 @@ bin/rails generate scaffold LineItem product:references cart:belongs_to
 bin/rails generate channel products
 
 bin/rails generate mailer Order received shipped
+
+bin/rails generate job charge_order
 ```
 
 **Tests
