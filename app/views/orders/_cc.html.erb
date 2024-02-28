@@ -1,11 +1,11 @@
 <fieldset data-payment-target="additionalFields" data-type="Credit card"> 
     <div class="my-5">
         <%= form.label :credit_card_number %>
-        <%= form.password_field :credit_card_number, class: "input-field" %> 
+        <%= form.password_field :credit_card_number, class: "input-field block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %> 
     </div>
     
     <div class="my-5">
         <%= form.label :expiration_date %>
-        <%= form.text_field :expiration_date, class: "input-field", size:9, placeholder: "e.g. 03/22" %> 
+        <%= form.text_field :expiration_date, class: "input-field block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", size:9, placeholder: "e.g. 03/22" %> 
     </div>
 </fieldset>

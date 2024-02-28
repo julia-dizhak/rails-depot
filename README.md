@@ -89,6 +89,8 @@ Below steps are necessary to get the app up and running locally:
 * Providing a flash notice of an error that was detected
 * Creating Hotwired Cart
 * Broadcasting updates with Action Cable for products
+* I added a Stimulus controller that attached to the HTML to make the dynamic changes happen
+* Used Capybara to system-test this functionality.
 
 ## Cloud deployment - Docker
 
