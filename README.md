@@ -48,6 +48,8 @@ Table `orders` consist of customer’s contact information and payment details
 * `product_id`: A foreign key referencing the id column of the products table. Indicates the product associated with the line item.
 * `cart_id`: A foreign key referencing the id column of the carts table. Indicates the cart to which the line item belongs.
 * `quantity`: Indicates the quantity of the product in the line item. Defaults to 1.
+  
+Table `users`
 
 ## What is included
 
@@ -93,6 +95,7 @@ Below steps are necessary to get the app up and running locally:
 * Used Capybara to system-test this functionality.
 * Sending Emails
 * Using Active Job, which is a generic framework for running code in the background.
+* Logging: add users
 
 ## Sending Emails
 
