@@ -91,6 +91,16 @@ Below steps are necessary to get the app up and running locally:
 * Broadcasting updates with Action Cable for products
 * I added a Stimulus controller that attached to the HTML to make the dynamic changes happen
 * Used Capybara to system-test this functionality.
+* Sending Emails
+* Using Active Job, which is a generic framework for running code in the background.
+
+## Sending Emails
+
+Sending email in Rails has three basic parts:
+
+* configuring how email is to be sent
+* determining when to send the email
+* and specifying what you want to say
 
 ## Cloud deployment - Docker
 
@@ -134,6 +144,8 @@ bin/rails generate scaffold Cart
 bin/rails generate scaffold LineItem product:references cart:belongs_to
 
 bin/rails generate channel products
+
+bin/rails generate mailer Order received shipped
 ```
 
 **Tests
